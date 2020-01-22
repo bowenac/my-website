@@ -158,7 +158,7 @@ const IndexPage = ({ data, location }) => (
                                     <small>Javascript</small>
                                 </div>
                                 {project.description && <p>{project.description}</p>}
-                                {project.url && <a class="btn" target="_blank" href="{project.url}">View Website</a>}
+                                {project.url && <a class="btn" target="_blank" rel="noopener noreferrer" href={project.url}>View Website</a>}
                             </div>
                             <div class="col-lg-8">
                                 <Img fluid={project.image.localFile.childImageSharp.fluid} />
