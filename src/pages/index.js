@@ -193,6 +193,7 @@ const IndexPage = ({ data, location }) => {
                         <h2>Hire Me, or just say hi!</h2>
                     </div>
                     <form className="contact-form" name="contact" method="POST" action="/thankyou" netlify-honeypot="why-field" data-netlify="true">
+                        <input type="hidden" name="form-name" value="contact" />
                         <p class="hidden"><input name="why-field" /></p>
                         <div className="row">
                             <div className="col-md-6">
