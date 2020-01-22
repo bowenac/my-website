@@ -49,6 +49,9 @@ section a:hover {
     text-decoration: none;
     background-size: 100% 30%, 100% 30%;
 }
+.hidden {
+    display: none;
+}
 .t-left {
     text-align: left;
 }

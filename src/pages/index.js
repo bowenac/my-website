@@ -192,6 +192,25 @@ const IndexPage = ({ data, location }) => {
                     <div class="waypoint animate" data-animation="slide-in-left">
                         <h2>Hire Me, or just say hi!</h2>
                     </div>
+                    <form className="contact-form" name="contact" method="POST" netlify-honeypot="why-field" data-netlify="true">
+                        <p class="hidden"><input name="why-field" /></p>
+                        <div className="row">
+                            <div className="col-md-6">
+                                <input required type="text" name="name" placeholder="Name" />
+                            </div>
+                            <div className="col-md-6">
+                                <input required type="text" name="email" placeholder="Email" />
+                            </div>
+                        </div>
+                        <p>
+                            <textarea required name="message" placeholder="Message" cols="40" rows="10"></textarea>
+                        </p>
+                        <p>
+                            <button type="submit">Send</button>
+                        </p>
+                    </form>
+
+
                     <div>
                         <Mutation mutation={CONTACT_MUTATION}>
                             {(createSubmission, { loading, error, data }) => (
