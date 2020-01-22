@@ -8,44 +8,54 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import Helmet from "react-helmet"
 
 import Header from "./header"
-import "./layout.css"
+import "../styles/style.css"
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
 
-  return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
-    </>
-  )
+    const data = useStaticQuery(graphql`
+        query SiteTitleQuery {
+            site {
+                siteMetadata {
+                    title
+                }
+            }
+        }
+    `)
+
+    return (
+        <>
+            <Helmet>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap-grid.min.css" />
+                <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+            </Helmet>
+
+            <Header siteTitle={data.site.siteMetadata.title} />
+
+            <main>{children}</main>
+
+            <footer id="colophon" class="site-footer">
+                <div class="site-info container">
+                    <div class="row">
+                        <div class="col-sm-12 t-right">
+                            <ul class="social">
+                                <li><a target="_blank" href="https://github.com/bowenac" rel="noopener noreferrer"><i class="fab fa-github"></i></a></li>
+                                <li><a target="_blank" href="https://www.linkedin.com/in/adambowen81/" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a></li>
+                            </ul>
+                            <p class="copyright">&copy; {new Date().getFullYear()} Adam Bowen</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </>
+    )
 }
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+    children: PropTypes.node.isRequired,
 }
 
 export default Layout
