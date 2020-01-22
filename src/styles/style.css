@@ -61,7 +61,9 @@ section a:hover {
 .t-right {
     text-align: right;
 }
-
+main {
+    padding-top: 60px;
+}
 .site-header {
     position: absolute;
     display: block;

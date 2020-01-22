@@ -26,11 +26,15 @@ const Header = ({ siteTitle }) => {
                     <nav id="site-navigation" className="main-navigation">
                         <button className="menu-toggle" aria-controls="primary-menu" aria-expanded="false"></button>
                         <ul id="primary-menu" className="menu">
-                            {data.allWordpressMenusMenusItems.nodes[0].items.map(item => {
+                            <li><a href="/#about">About</a></li>
+                            <li><a href="/#skills">Skills</a></li>
+                            <li><a href="/#work">Work</a></li>
+                            <li><a href="/#contact">Contact</a></li>
+                            {/* {data.allWordpressMenusMenusItems.nodes[0].items.map(item => {
                                 return (
                                     <li><a href={item.url}>{item.title}</a></li>
                                 )
-                            })}
+                            })} */}
                         </ul>
                     </nav>
                 </div>

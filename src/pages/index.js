@@ -192,7 +192,7 @@ const IndexPage = ({ data, location }) => {
                     <div class="waypoint animate" data-animation="slide-in-left">
                         <h2>Hire Me, or just say hi!</h2>
                     </div>
-                    <form className="contact-form" name="contact" method="POST" netlify-honeypot="why-field" data-netlify="true">
+                    <form className="contact-form" name="contact" method="POST" action="/thankyou" netlify-honeypot="why-field" data-netlify="true">
                         <p class="hidden"><input name="why-field" /></p>
                         <div className="row">
                             <div className="col-md-6">

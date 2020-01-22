@@ -54,8 +54,8 @@ exports.onRouteUpdate = () => {
 
         /* Anchor Scroll */
         $('a[href*=\\#]').click(function (e) {
-            e.preventDefault();
-            var anchor = $(this).attr('href');
+            //e.preventDefault();
+            var anchor = $(this).attr('href').replace(/[/]/g, '');
             if ($(anchor).length > 0) {
                 $('html, body').animate(
                     {
@@ -65,5 +65,18 @@ exports.onRouteUpdate = () => {
                 );
             }
         });
+        /* Scroll to anchor if pages loaded with a hash */
+        setTimeout(function () {
+            if (window.location.hash) {
+                var hash = window.location.hash;
+                $('html, body').animate(
+                    {
+                        scrollTop: $(hash).offset().top - 60
+                    },
+                    400
+                );
+            }
+        }, 500);
+
     })
 }
