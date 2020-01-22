@@ -392,6 +392,10 @@ footer {
     section#skills .col-md-4:last-child {
         margin-bottom: 0px;
     }
+
+    .hero h1 br{
+        display: none;
+    }
 }
 @media screen and (max-width: 576px) {
     .site-branding {
