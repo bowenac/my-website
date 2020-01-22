@@ -32,9 +32,8 @@ const Layout = ({ children }) => {
                 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-24911586-1"></script>
                 <script>{`window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-24911586-1');`}</script>
                 {/* End Global site tag (gtag.js) - Google Analytics */}
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap-grid.min.css" />
-                <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+
+                {/* Other scripts added to gatsby-ssr.js */}
             </Helmet>
 
             <Header siteTitle={data.site.siteMetadata.title} />
@@ -46,8 +45,8 @@ const Layout = ({ children }) => {
                     <div class="row">
                         <div class="col-sm-12 t-right">
                             <ul class="social">
-                                <li><a target="_blank" href="https://github.com/bowenac" rel="noopener noreferrer"><i class="fab fa-github"></i></a></li>
-                                <li><a target="_blank" href="https://www.linkedin.com/in/adambowen81/" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a></li>
+                                <li><a target="_blank" href="https://github.com/bowenac" rel="noopener noreferrer"><span className="icon-github"></span></a></li>
+                                <li><a target="_blank" href="https://www.linkedin.com/in/adambowen81/" rel="noopener noreferrer"><span className="icon-linkedin"></span></a></li>
                             </ul>
                             <p class="copyright">&copy; {new Date().getFullYear()} Adam Bowen</p>
                         </div>

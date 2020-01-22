@@ -59,10 +59,10 @@ const IndexPage = ({ data, location }) => (
             pathname={location.pathname}
         />
 
-        <section class="hero" style={{ background: data.wordpressPage.acf.background_color }}>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4 t-center">
+        <section className="hero" style={{ background: data.wordpressPage.acf.background_color }}>
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-4 t-center">
                         <Img fixed={data.wordpressPage.acf.inside_image.localFile.childImageSharp.fixed} />
                     </div>
                     <div className="col-md-8 waypoint" data-animation="slide-in-right">
@@ -74,24 +74,24 @@ const IndexPage = ({ data, location }) => (
         </section>
 
         <section id="quote">
-            <div class="container t-center">
+            <div className="container t-center">
                 <h2>"Do what you love, and you’ll never work another day in your life!"</h2>
             </div>
         </section>
 
         <section id="about">
-            <div class="container">
+            <div className="container">
                 <h2>{data.wordpressPage.title}</h2>
                 <div dangerouslySetInnerHTML={{ __html: data.wordpressPage.content }}></div>
             </div>
         </section>
 
         <section id="skills">
-            <div class="container">
+            <div className="container">
                 <h2>Skills</h2>
-                <p>Lots and lots of <i class="fas fa-coffee"></i></p>
-                <div class="row">
-                    <div class="col-md-4">
+                <p>Lots and lots of  <span className="icon-coffeescript"></span></p>
+                <div className="row">
+                    <div className="col-md-4">
                         <h3>CMS</h3>
                         <ul>
                             <li>WordPress, WooCommerce</li>
@@ -103,18 +103,18 @@ const IndexPage = ({ data, location }) => (
                             <li>ProcessWire</li>
                         </ul>
                     </div>
-                    <div class="col-md-4">
+                    <div className="col-md-4">
                         <h3>Code/Frameworks</h3>
                         <ul>
-                            <li><i class="fab fa-react"></i>React, Gatsby <i class="fas fa-heart"></i></li>
-                            <li><i class="fab fa-php"></i>PHP</li>
-                            <li><i class="fas fa-database"></i>MySQL</li>
-                            <li><i class="fab fa-html5"></i>HTML</li>
-                            <li><i class="fab fa-css3"></i>CSS</li>
-                            <li><i class="fab fa-js"></i>JavaScript, jQuery</li>
+                            <li><span className="icon-react"></span>React, Gatsby <span className="icon-heart"></span></li>
+                            <li><span className="icon-php"></span>PHP</li>
+                            <li><span className="icon-mysql"></span>MySQL</li>
+                            <li><span className="icon-html-five"></span>HTML</li>
+                            <li><span className="icon-css3"></span>CSS</li>
+                            <li><span className="icon-javascript"></span>JavaScript, jQuery</li>
                         </ul>
                     </div>
-                    <div class="col-md-4">
+                    <div className="col-md-4">
                         <h3>Other</h3>
                         <ul>
                             <li>Pantheon, WP Engine, AWS, Netlify</li>
@@ -130,13 +130,13 @@ const IndexPage = ({ data, location }) => (
         </section>
 
         <section id="work">
-            <div class="container">
+            <div className="container">
                 <h2>Work</h2>
                 {data.wordpressPage.acf.intro && <p>{data.wordpressPage.acf.intro}</p>}
                 {data.wordpressPage.acf.projects.map(project => {
                     return (
-                        <div class="row">
-                            <div class="col-lg-4">
+                        <div className="row">
+                            <div className="col-lg-4">
                                 {project.name && <h3>{project.name}</h3>}
                                 {project.points && <ul className="points">
                                     {project.points.map(point => {
@@ -158,9 +158,9 @@ const IndexPage = ({ data, location }) => (
                                     <small>Javascript</small>
                                 </div>
                                 {project.description && <p>{project.description}</p>}
-                                {project.url && <a class="btn" target="_blank" rel="noopener noreferrer" href={project.url}>View Website</a>}
+                                {project.url && <a className="btn" target="_blank" rel="noopener noreferrer" href={project.url}>View Website</a>}
                             </div>
-                            <div class="col-lg-8">
+                            <div className="col-lg-8">
                                 <Img fluid={project.image.localFile.childImageSharp.fluid} />
                             </div>
                         </div>
@@ -170,13 +170,13 @@ const IndexPage = ({ data, location }) => (
         </section>
 
         <section id="contact">
-            <div class="container">
-                <div class="waypoint animate" data-animation="slide-in-left">
+            <div className="container">
+                <div className="waypoint animate" data-animation="slide-in-left">
                     <h2>Hire Me, or just say hi!</h2>
                 </div>
                 <form className="contact-form" name="contact" method="POST" action="/thankyou" netlify-honeypot="why-field" data-netlify="true">
                     <input type="hidden" name="form-name" value="contact" />
-                    <p class="hidden"><input name="why-field" /></p>
+                    <p className="hidden"><input name="why-field" /></p>
                     <div className="row">
                         <div className="col-md-6">
                             <p><input required type="text" name="name" placeholder="Name" /></p>
