@@ -55,7 +55,7 @@ const IndexPage = ({ data, location }) => (
             title="Home"
             description="Freelance Web Developer from Tacoma WA"
             keywords={[`freelance`, `web developer`, `gatsby`, `wordpress`, `javascript`, `react`, `tacoma wa`]}
-            image="/images/ab-icon.png"
+            image="/images/og-image.png"
             pathname={location.pathname}
         />
 

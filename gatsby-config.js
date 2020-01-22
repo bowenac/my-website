@@ -10,8 +10,8 @@ module.exports = {
         titleTemplate: "%s · %s",
         url: `https://adamcbowen.com`, // No trailing slash allowed!
         description: `Freelance Web Developer from Tacoma WA`,
-        image: "/images/ab-icon.png", // Path to your image you placed in the 'static' folder
-        twitterUsername: `@bowenac`, // Will show meta twitter:creator if used e.g. @gatsbyjs
+        image: "/images/og-image.png", // Path to your image you placed in the 'static' folder
+        twitterUsername: `@Bowenac`, // Will show meta twitter:creator if used e.g. @gatsbyjs
     },
     plugins: [
         `gatsby-plugin-react-helmet`,
