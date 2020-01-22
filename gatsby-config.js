@@ -59,12 +59,6 @@ module.exports = {
                 hostingWPCOM: false,
                 useACF: true,
             },
-        },
-        {
-            resolve: 'gatsby-plugin-apollo',
-            options: {
-                uri: process.env.GATSBY_WORDPRESS_GRAPHQL_URL
-            }
         }
     ],
 }

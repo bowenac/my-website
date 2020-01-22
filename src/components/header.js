@@ -1,48 +1,49 @@
-import { Link, useStaticQuery, graphql } from "gatsby"
-import PropTypes from "prop-types"
+import { Link } from "gatsby"
 import React from "react"
+import PropTypes from "prop-types"
 
-const Header = ({ siteTitle }) => {
-    const data = useStaticQuery(graphql`
-        query WordPressMenu {
-            allWordpressMenusMenusItems(filter: {name: {eq: "menu"}}) {
-                nodes {
-                    items {
-                        title
-                        url
-                    }
-                }
-            }
-        }
-    `)
+class Header extends React.Component {
 
-    return (
-        <>
+    state = { showMenu: false }
+
+    toggleMenu = () => {
+        this.setState({
+            showMenu: !this.state.showMenu
+        })
+    }
+    closeMenu = () => {
+        this.setState({
+            showMenu: false
+        })
+    }
+
+    render() {
+        const menuActive = this.state.showMenu ? 'expanded' : '';
+        const siteTitle = this.props.siteTitle;
+        return (
             <header id="masthead" className="site-header">
-                <div className="container">
+                <div className={`container ${menuActive}`}>
                     <div className="site-branding">
                         <Link to="/" rel="home">{siteTitle}</Link>
                     </div>
                     <nav id="site-navigation" className="main-navigation">
-                        <button className="menu-toggle" aria-controls="primary-menu" aria-expanded="false"></button>
+                        <div role="button" className="hamburger" tabIndex={0} onClick={this.toggleMenu} onKeyPress={this.toggleMenu}>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
                         <ul id="primary-menu" className="menu">
-                            <li><a href="/#about">About</a></li>
-                            <li><a href="/#skills">Skills</a></li>
-                            <li><a href="/#work">Work</a></li>
-                            <li><a href="/#contact">Contact</a></li>
-                            {/* {data.allWordpressMenusMenusItems.nodes[0].items.map(item => {
-                                return (
-                                    <li><a href={item.url}>{item.title}</a></li>
-                                )
-                            })} */}
+                            <li><a onClick={this.closeMenu} href="/#about">About</a></li>
+                            <li><a onClick={this.closeMenu} href="/#skills">Skills</a></li>
+                            <li><a onClick={this.closeMenu} href="/#work">Work</a></li>
+                            <li><a onClick={this.closeMenu} href="/#contact">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
             </header>
-        </>
-    )
-}
-
+        )
+    }
+};
 Header.propTypes = {
     siteTitle: PropTypes.string,
 }
@@ -50,5 +51,4 @@ Header.propTypes = {
 Header.defaultProps = {
     siteTitle: ``,
 }
-
 export default Header
