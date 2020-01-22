@@ -27,8 +27,8 @@ export const homepageContent = graphql`
                     image {
                         localFile {
                             childImageSharp {
-                                fluid {
-                                    ...GatsbyImageSharpFluid
+                                fluid(maxWidth: 800) {
+                                    ...GatsbyImageSharpFluid_tracedSVG
                                 }
                             }
                         }
