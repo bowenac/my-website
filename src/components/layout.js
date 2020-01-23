@@ -34,6 +34,7 @@ const Layout = ({ children }) => {
                 {/* End Global site tag (gtag.js) - Google Analytics */}
 
                 {/* Other scripts added to gatsby-ssr.js */}
+                <html lang="en" />
             </Helmet>
 
             <Header siteTitle={data.site.siteMetadata.title} />
@@ -45,8 +46,8 @@ const Layout = ({ children }) => {
                     <div class="row">
                         <div class="col-sm-12 t-right">
                             <ul class="social">
-                                <li><a target="_blank" href="https://github.com/bowenac" rel="noopener noreferrer"><span className="icon-github"></span></a></li>
-                                <li><a target="_blank" href="https://www.linkedin.com/in/adambowen81/" rel="noopener noreferrer"><span className="icon-linkedin"></span></a></li>
+                                <li><a target="_blank" href="https://github.com/bowenac" rel="noopener noreferrer" aria-label="My Github"><span className="icon-github"></span></a></li>
+                                <li><a target="_blank" href="https://www.linkedin.com/in/adambowen81/" rel="noopener noreferrer" aria-label="My LinkedIn"><span className="icon-linkedin"></span></a></li>
                             </ul>
                             <p class="copyright">&copy; {new Date().getFullYear()} Adam Bowen</p>
                         </div>

@@ -179,14 +179,14 @@ const IndexPage = ({ data, location }) => (
                     <p className="hidden"><input name="why-field" /></p>
                     <div className="row">
                         <div className="col-md-6">
-                            <p><input required type="text" name="name" placeholder="Name" /></p>
+                            <p><input required type="text" name="name" placeholder="Name" aria-label="Name" /></p>
                         </div>
                         <div className="col-md-6">
-                            <p><input required type="text" name="email" placeholder="Email" /></p>
+                            <p><input required type="text" name="email" placeholder="Email" aria-label="Email" /></p>
                         </div>
                     </div>
                     <p>
-                        <textarea required name="message" placeholder="Message" cols="40" rows="10"></textarea>
+                        <textarea required name="message" placeholder="Message" cols="40" rows="10" aria-label="Message"></textarea>
                     </p>
                     <p>
                         <button type="submit">Send</button>

@@ -27,7 +27,7 @@ class Header extends React.Component {
                         <Link to="/" rel="home">{siteTitle}</Link>
                     </div>
                     <nav id="site-navigation" className="main-navigation">
-                        <div role="button" className="hamburger" tabIndex={0} onClick={this.toggleMenu} onKeyPress={this.toggleMenu}>
+                        <div role="button" aria-label="Menu Toggle" className="hamburger" tabIndex={0} onClick={this.toggleMenu} onKeyPress={this.toggleMenu}>
                             <span></span>
                             <span></span>
                             <span></span>
